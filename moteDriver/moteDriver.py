@@ -36,7 +36,7 @@ if debug == True:
     mote.set_brightness(0.2)
     x = 0
     while x < 5:
-        print("doing a rainbow for 15 seconds")
+        print("doing a rainbow for 10 seconds")
         current_time = datetime.now()
         while datetime.now() < (current_time + timedelta(seconds=10)):
             h = time.time() * 50
