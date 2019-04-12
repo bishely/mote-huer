@@ -6,7 +6,7 @@ Almost done! It's a Python script that watches a group and a selection of Hue bu
 
 ## How does it do it?
 
-So far, the Python code does a couple of things: it checks whether the current time is between 1 hour before sunset and a specified 'night' time - if so, it does a little rainbow loop animation on the Mote sticks. Otherwise, it polls the API on my Hue hub to see whether any lights in a room's group are on. If so, it gets the XY colours of those lights, converts them to RGB, puts them all in a big list, works out the distances between the colours (in HSV colourspace) and tries to calculate and display some smooth fades between those colours. If none of them are on, it turns the Mote sticks off.
+So far, the Python code does a couple of things: it checks whether the current time is between x hours before sunset and a specified 'night' time - if so, it does a little rainbow loop animation on the Mote sticks. Otherwise, it polls the API on my Hue hub to see whether any lights in a room's group are on. If so, it gets the XY colours of those lights, converts them to RGB, puts them all in a big list, works out the distances between the colours (in HSV colourspace) and tries to calculate and display some smooth fades between those colours. If none of them are on, it turns the Mote sticks off.
 
 ## Why?
 
