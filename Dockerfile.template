@@ -1,0 +1,21 @@
+# Initialise Docker Image
+FROM resin/%%RESIN_MACHINE_NAME%%-python
+
+# Update
+RUN apt-get update
+
+# Install Dependencies
+RUN pip install https://github.com/benknight/hue-python-rgb-converter/zipball/master
+RUN pip install requests motephat schedule
+
+
+# Set TimeZone
+RUN echo "Setting time zone to ${TIMEZONE=UTC}"
+RUN echo "${TIMEZONE}" > /etc/timezone
+RUN dpkg-reconfigure tzdata
+
+# Copy Script
+COPY ./moteDriver/moteDriver.py ./
+
+# Run Script
+CMD ["python", "./moteDriver.py"]
